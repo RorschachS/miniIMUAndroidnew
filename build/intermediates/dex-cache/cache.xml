@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="E:\sdk\extras\android\m2repository\com\android\support\support-v4\19.1.0\support-v4-19.1.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="22.0.1"
+        sha1="85f201b380937e61a9dce6ca90ccf6872abbfb67">
+        <dex dex="C:\Users\www73\Desktop\miniIMUAndroid -copy\app\build\intermediates\pre-dexed\debug\support-v4-19.1.0_2e6e25d109b7d5cb6678a669b8dfd80fa379256f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\sdk\extras\android\m2repository\com\android\support\support-v4\19.1.0\support-v4-19.1.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="85f201b380937e61a9dce6ca90ccf6872abbfb67">
+        <dex dex="C:\Users\www73\Desktop\miniIMUAndroid\app\build\intermediates\pre-dexed\debug\support-v4-19.1.0_2e6e25d109b7d5cb6678a669b8dfd80fa379256f.jar" />
+    </item>
+
+</items>

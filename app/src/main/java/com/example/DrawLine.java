@@ -22,18 +22,18 @@ public class DrawLine implements Renderer
 	Handler handler,handler2;
 	private Timer timer = new Timer();
 	private TimerTask task;
-	
+
 	// 定义Open GL ES绘制所需要的Buffer对象
 	FloatBuffer lineVerticesBuffer;   //顶点
 	FloatBuffer xyzVerticesBuffer;
-	ByteBuffer lineFacetsBuffer;	 	 //面	
+	ByteBuffer lineFacetsBuffer;	 	 //面
 	ByteBuffer xiangliangFacetsBuffer;
 	ByteBuffer XFacetsBuffer;
 	ByteBuffer YFacetsBuffer;
 	ByteBuffer ZFacetsBuffer;
-	
+
 	void updateXYZ(){
-		
+
 		// 定义立方体的8个顶点
 		float[] lineVertices = new float[] {
 			// 上顶面正方形的四个顶点
@@ -41,48 +41,48 @@ public class DrawLine implements Renderer
 			x, 0,z,//1
 			0,0,z,//2
 			0,y,z,//3
-			
+
 			// 下底面正方形的四个顶点
 			x,y,0,//4
 			x,0,0,//5
 			0,0,0,//6原点
-			0,y,0,//7 
-					
+			0,y,0,//7
+
 		};
 		//定义XYZ坐标和显示的字
 		float xyzVertices[]=new float[]{
 			-1.2f ,0f, 0f,//0 x起点，画坐标轴的
-			
+
 			1.2f ,0f, 0f,//1 X轴的终点
 			1.0f,0.1f,0f,//2 X轴箭头1
 			1.0f,-0.1f,0f,//3 X轴箭头2
-			
+
 			0f ,-1.2f , 0f,//4 Y轴起点
 			0f ,1.2f , 0f,//5 Y轴终点
 			0.1f ,1.0f ,0f,//6 Y轴箭头1
 			-0.1f ,1.0f ,0f,//7 Y轴箭头2
-			
+
 			0f ,0f ,-1.2f,//8 Z轴起点
 			0f ,0f ,1.2f,//9 Z轴终点
 			0f ,0.1f ,1.0f,//10 Z轴箭头1
-			0f ,-0.1f ,1.0f,//11 Z轴箭头2	
-			
+			0f ,-0.1f ,1.0f,//11 Z轴箭头2
+
 			1.3f,0f,0f,//12 绘制字X
 			1.35f,0.1f,0f,//13
 			1.25f,0.1f,0f,//14
 			1.25f,-0.1f,0f,//15
 			1.35f,-0.1f,0f,//16
-			
+
 			0f,1.4f,0f,//17 绘制字Y
 			0f,1.3f,0f,//18
 			0.05f,1.5f,0f,//19
 			-0.05f,1.5f,0f,//20
-			
+
 			-0.05f ,0.05f ,1.25f,//21  绘制字Z
 			0.05f,0.05f,1.25f,//22
 			-0.05f,-0.05f,1.25f,//23
 			0.05f,-0.05f,1.25f,//24
-			
+
 			//刻度X轴刻度
 			0.6f,0f,0f,//25
 			0.6f,0.1f,0f,//26
@@ -98,7 +98,7 @@ public class DrawLine implements Renderer
 			0f,0.1f,0.6f,//34
 			0f,0f,-0.6f,//35
 			0f,0.1f,-0.6f//36
-			
+
 		};
 		//画长方体的12条边
 		 byte[] lineFacets = new byte[]{
@@ -115,12 +115,12 @@ public class DrawLine implements Renderer
 				5,6,
 				6,7
 		};
-		//向量从原点6指向长方体的0点  
+		//向量从原点6指向长方体的0点
 		 byte[] xiangliangFacets = new byte[] {
-				6,0//6,0					
+				6,0//6,0
 		};
-		
-		//X坐标及其箭头  
+
+		//X坐标及其箭头
 		 byte[] XFacets = new byte[] {
 				//起终点
 				0,1,
@@ -135,15 +135,15 @@ public class DrawLine implements Renderer
 				//X坐标
 				25,26,
 				27,28
-				
+
 		};
-		//Y坐标及其箭头  
+		//Y坐标及其箭头
 		 byte[] YFacets = new byte[] {
 				//起终点
 				4,5,
 				//箭头
 				5,6,
-				5,7,	
+				5,7,
 				//字Y
 				17,18,
 				17,19,
@@ -151,9 +151,9 @@ public class DrawLine implements Renderer
 				//Y轴刻度
 				29,30,
 				31,32
-				
+
 		};
-		//Z坐标及其箭头  
+		//Z坐标及其箭头
 		 byte[] ZFacets = new byte[] {
 				//起终点
 				8,9,
@@ -180,60 +180,60 @@ public class DrawLine implements Renderer
 	}
 	//构造函数带了参数，是因为不同类间传递参数，将接受方的handler实例传递过来
 	public DrawLine(Handler handler_zjk) {
-		
+
 		handler2=handler_zjk;//实际上handler2就是接收方的实例了，巧妙的转换方法实现不同类间handler传递数据
 		handler = new Handler(){
 			public void handleMessage(Message msg) {
 				if(msg.what==200)//这是接收本类中定时器发送过来的信号用来更新正方体
-				updateXYZ();	
+				updateXYZ();
 		    }
-			
+
 		};
 		//定时器任务中发送了两个信号，给本类中发送了一个，给activity类中发了一个
 		task = new TimerTask(){
-			
+
 		   public void run() {
 			   String[] xyz = new String[3];//发送给activity用的
 			 //2s生成xyz的随机数
-				x=(float) (Math.random()*(-2)+1);			//[Math.random()大于0.0 且小于 1.0 ]
+/*				x=(float) (Math.random()*(-2)+1);			//[Math.random()大于0.0 且小于 1.0 ]
 				y=(float) (Math.random()*(-2)+1);
-				z=(float) (Math.random()*(-2)+1);
-			   
+				z=(float) (Math.random()*(-2)+1);*/
+
 //			   x=-0.1f;
 //			   y=0;
 //			   z=(float)-0.5;
-			   
-			   
-			   
-			   
+
+
+
+
 				//设定一下要显示的XYZ位数,不管正负都显示小数点后两位
 				if(x>0)
 					xyz[0]=String.valueOf(x).substring(0, 4);
-				else 
+				else
 					xyz[0]=String.valueOf(x).substring(0, 5);
-				if(y>0)	
+				if(y>0)
 					xyz[1]=String.valueOf(y).substring(0, 4);
-				else 
+				else
 					xyz[1]=String.valueOf(y).substring(0, 5);
 				if(z>0)
 					xyz[2]=String.valueOf(z).substring(0, 4);
-				else 
+				else
 					xyz[2]=String.valueOf(z).substring(0, 5);
 				Message msg = new Message();
 				msg.what=200;//这是发送给当前类中用来更新立方体的
 				handler.sendEmptyMessage(msg.what);
-				
+
 				msg.what=0x123;//这是发送给activity类中用来更新文本框中XYZ值得
 				Bundle bundle = new Bundle();//对数据包装后用MSG发送
 				//要发送的是一个字符串数组，第一个参数是指定数据的名，当接收数据时可以用这个名来选择获取哪个数据，很方便，第二个参数是发送的数组
 				bundle.putStringArray("xyz", xyz);
 				msg.setData(bundle);
 				handler2.sendMessage(msg);//handler2指的是接收处的Handler实例，这里因为不是同一类，所以要用构造函数将接受类的handler实例传递过来
-			   
-			       
+
+
 		   }
 	   };
-	   timer.schedule(task, 0, 100);
+	   timer.schedule(task, 0, 1000);
 	}
 
 	@Override

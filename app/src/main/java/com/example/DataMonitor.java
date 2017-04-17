@@ -4,6 +4,8 @@ import java.io.File;
 import java.security.PublicKey;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import javax.security.auth.PrivateCredentialPermission;
 
@@ -187,7 +189,7 @@ public class DataMonitor extends FragmentActivity implements OnClickListener {
 					}
 
 
-					
+
 				} catch (Exception e) {
 					// TODO: handle exception
 				}
@@ -323,10 +325,10 @@ public class DataMonitor extends FragmentActivity implements OnClickListener {
 	public void onActivityResult(int requestCode, int resultCode, Intent data) {
 
 		switch (requestCode) {
-		case REQUEST_CONNECT_DEVICE:// When DeviceListActivity returns with a device to connect			
-			if (resultCode == Activity.RESULT_OK) {				
-				String address = data.getExtras().getString(DeviceListActivity.EXTRA_DEVICE_ADDRESS);// Get the device MAC address				
-				device = mBluetoothAdapter.getRemoteDevice(address);// Get the BLuetoothDevice object				
+		case REQUEST_CONNECT_DEVICE:// When DeviceListActivity returns with a device to connect
+			if (resultCode == Activity.RESULT_OK) {
+				String address = data.getExtras().getString(DeviceListActivity.EXTRA_DEVICE_ADDRESS);// Get the device MAC address
+				device = mBluetoothAdapter.getRemoteDevice(address);// Get the BLuetoothDevice object
 				mBluetoothService.connect(device);// Attempt to connect to the device
 			}
 			break;
@@ -689,7 +691,7 @@ public class DataMonitor extends FragmentActivity implements OnClickListener {
 				onPlot();
 				break;
 		}
-		((Button) findViewById(R.id.button0)).setBackgroundResource(R.drawable.ic_preference_single_normal);
+        ((Button) findViewById(R.id.button0)).setBackgroundResource(R.drawable.ic_preference_single_normal);
 		((Button) findViewById(R.id.button1)).setBackgroundResource(R.drawable.ic_preference_single_normal);
 		((Button) findViewById(R.id.button2)).setBackgroundResource(R.drawable.ic_preference_single_normal);
 		((Button) findViewById(R.id.button3)).setBackgroundResource(R.drawable.ic_preference_single_normal);
@@ -777,32 +779,70 @@ public class DataMonitor extends FragmentActivity implements OnClickListener {
 		}
 	};
 
-	public void onPlot(){
-		float[] jiasudu=new float[4];
+	private TimerTask myTask;
+	private Timer timer=new Timer();
+
+	public void onPlot() {
+/*		float[] jiasudu=new float[4];
 		jiasudu[0]=mData[0];
 		jiasudu[1]=mData[1];
 		jiasudu[2]=mData[2];
-		jiasudu[3]=mData[16];
+		jiasudu[3]=mData[16];*/
 
 
 
 		/*Intent intent = new Intent(this, PlotActivity.class);
 		intent.putExtra(EXTRA_MESSAGE,jiasudu);
 		startActivity(intent);*/
-        //setContentView(R.layout.plot_activity);
+		//setContentView(R.layout.plot_activity);
 
-        // 创建一个GLSurfaceView，用于显示OpenGL绘制的图形
-        GLSurfaceView glView = new GLSurfaceView(this);
+		// 创建一个GLSurfaceView，用于显示OpenGL绘制的图形
+		GLSurfaceView glView = new GLSurfaceView(this);
 
-        /*****************************************************************
-         * 注意:下面调用DrawLine的构造函数的时候一定要保证次语句在参数drawlineHandler的实体下面
-         * 因为不然的话在DrawLine.java中调用handler2.sendMessage(msg);虽然这时候已经把
-         * 次函数中的handler通过构造函数传递过去了，但是实际上只是传递过去 了个声明，并没有实体，所以会
-         * 在handler2.sendMessage(msg)处报错发现空指针NULLpoitexception
-         * zjk2014/03/04注
-         */
-        // 创建GLSurfaceView的内容绘制器
-        DrawLine myRender = new DrawLine(drawlineHandler);
+		/*****************************************************************
+		 * 注意:下面调用DrawLine的构造函数的时候一定要保证次语句在参数drawlineHandler的实体下面
+		 * 因为不然的话在DrawLine.java中调用handler2.sendMessage(msg);虽然这时候已经把
+		 * 次函数中的handler通过构造函数传递过去了，但是实际上只是传递过去 了个声明，并没有实体，所以会
+		 * 在handler2.sendMessage(msg)处报错发现空指针NULLpoitexception
+		 * zjk2014/03/04注
+		 */
+		// 创建GLSurfaceView的内容绘制器
+		//
+		final DrawLine myRender = new DrawLine(drawlineHandler);
+
+     	//使用Timer传递数据
+		myTask = new TimerTask() {
+
+			public void run() {
+				float[] jiasudu = new float[4];
+				jiasudu[0] = mData[0];
+				jiasudu[1] = mData[1];
+				jiasudu[2] = mData[2];
+				jiasudu[3] = mData[16];
+				myRender.getXYZ(jiasudu);
+
+			}
+		};
+		timer.schedule(myTask, 0, 1000);
+
+
+			//使用线程传递数据
+/*		   class MyThread extends Thread {
+			@Override
+			public void run() {
+				float[] jiasudu = new float[4];
+				jiasudu[0] = mData[0];
+				jiasudu[1] = mData[1];
+				jiasudu[2] = mData[2];
+				jiasudu[3] = mData[16];
+				myRender.getXYZ(jiasudu);
+
+			}
+		}
+		Thread thread = new MyThread();
+		thread.start();*/
+
+
         //myRender.getXYZ(jiasudu);
         // 为GLSurfaceView设置绘制器
         glView.setRenderer(myRender);

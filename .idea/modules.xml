@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/miniIMUAndroid-06c264e79ab171764ca855f2205ec998eaed542f.iml" filepath="$PROJECT_DIR$/miniIMUAndroid-06c264e79ab171764ca855f2205ec998eaed542f.iml" />
+    </modules>
+  </component>
+</project>

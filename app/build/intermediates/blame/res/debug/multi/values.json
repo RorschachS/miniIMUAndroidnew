@@ -1,0 +1,391 @@
+[
+    {
+        "outputFile": "C:\\Users\\www73\\Desktop\\miniIMUAndroid-06c264e79ab171764ca855f2205ec998eaed542f\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 165,
+                    "endColumn": 45,
+                    "endOffset": 206
+                },
+                "from": {
+                    "file": "C:\\Users\\www73\\Desktop\\miniIMUAndroid-06c264e79ab171764ca855f2205ec998eaed542f\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 17,
+                        "endColumn": 45,
+                        "endOffset": 58
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 211,
+                    "endColumn": 57,
+                    "endOffset": 264
+                },
+                "from": {
+                    "file": "C:\\Users\\www73\\Desktop\\miniIMUAndroid-06c264e79ab171764ca855f2205ec998eaed542f\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 187,
+                        "endColumn": 57,
+                        "endOffset": 240
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 269,
+                    "endColumn": 44,
+                    "endOffset": 309
+                },
+                "from": {
+                    "file": "C:\\Users\\www73\\Desktop\\miniIMUAndroid-06c264e79ab171764ca855f2205ec998eaed542f\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 19,
+                        "startColumn": 4,
+                        "startOffset": 741,
+                        "endColumn": 44,
+                        "endOffset": 781
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 314,
+                    "endColumn": 40,
+                    "endOffset": 350
+                },
+                "from": {
+                    "file": "C:\\Users\\www73\\Desktop\\miniIMUAndroid-06c264e79ab171764ca855f2205ec998eaed542f\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 23,
+                        "startColumn": 4,
+                        "startOffset": 822,
+                        "endColumn": 40,
+                        "endOffset": 858
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 7,
+                    "startColumn": 4,
+                    "startOffset": 355,
+                    "endColumn": 47,
+                    "endOffset": 398
+                },
+                "from": {
+                    "file": "C:\\Users\\www73\\Desktop\\miniIMUAndroid-06c264e79ab171764ca855f2205ec998eaed542f\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 24,
+                        "startColumn": 4,
+                        "startOffset": 863,
+                        "endColumn": 47,
+                        "endOffset": 906
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 8,
+                    "startColumn": 4,
+                    "startOffset": 403,
+                    "endColumn": 46,
+                    "endOffset": 445
+                },
+                "from": {
+                    "file": "C:\\Users\\www73\\Desktop\\miniIMUAndroid-06c264e79ab171764ca855f2205ec998eaed542f\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 27,
+                        "startColumn": 4,
+                        "startOffset": 921,
+                        "endColumn": 46,
+                        "endOffset": 963
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 450,
+                    "endColumn": 44,
+                    "endOffset": 490
+                },
+                "from": {
+                    "file": "C:\\Users\\www73\\Desktop\\miniIMUAndroid-06c264e79ab171764ca855f2205ec998eaed542f\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 16,
+                        "startColumn": 4,
+                        "startOffset": 583,
+                        "endColumn": 44,
+                        "endOffset": 623
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 10,
+                    "startColumn": 4,
+                    "startOffset": 495,
+                    "endColumn": 48,
+                    "endOffset": 539
+                },
+                "from": {
+                    "file": "C:\\Users\\www73\\Desktop\\miniIMUAndroid-06c264e79ab171764ca855f2205ec998eaed542f\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 4,
+                        "startOffset": 534,
+                        "endColumn": 48,
+                        "endOffset": 578
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 11,
+                    "startColumn": 4,
+                    "startOffset": 544,
+                    "endColumn": 52,
+                    "endOffset": 592
+                },
+                "from": {
+                    "file": "C:\\Users\\www73\\Desktop\\miniIMUAndroid-06c264e79ab171764ca855f2205ec998eaed542f\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 134,
+                        "endColumn": 52,
+                        "endOffset": 182
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 12,
+                    "startColumn": 4,
+                    "startOffset": 597,
+                    "endColumn": 44,
+                    "endOffset": 637
+                },
+                "from": {
+                    "file": "C:\\Users\\www73\\Desktop\\miniIMUAndroid-06c264e79ab171764ca855f2205ec998eaed542f\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 13,
+                        "startColumn": 4,
+                        "startOffset": 440,
+                        "endColumn": 44,
+                        "endOffset": 480
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 13,
+                    "startColumn": 4,
+                    "startOffset": 642,
+                    "endColumn": 48,
+                    "endOffset": 686
+                },
+                "from": {
+                    "file": "C:\\Users\\www73\\Desktop\\miniIMUAndroid-06c264e79ab171764ca855f2205ec998eaed542f\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 14,
+                        "startColumn": 4,
+                        "startOffset": 485,
+                        "endColumn": 48,
+                        "endOffset": 529
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 14,
+                    "startColumn": 4,
+                    "startOffset": 691,
+                    "endColumn": 37,
+                    "endOffset": 724
+                },
+                "from": {
+                    "file": "C:\\Users\\www73\\Desktop\\miniIMUAndroid-06c264e79ab171764ca855f2205ec998eaed542f\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 96,
+                        "endColumn": 37,
+                        "endOffset": 129
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 15,
+                    "startColumn": 4,
+                    "startOffset": 729,
+                    "endColumn": 42,
+                    "endOffset": 767
+                },
+                "from": {
+                    "file": "C:\\Users\\www73\\Desktop\\miniIMUAndroid-06c264e79ab171764ca855f2205ec998eaed542f\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 28,
+                        "startColumn": 4,
+                        "startOffset": 968,
+                        "endColumn": 42,
+                        "endOffset": 1006
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 16,
+                    "startColumn": 4,
+                    "startOffset": 772,
+                    "endColumn": 52,
+                    "endOffset": 820
+                },
+                "from": {
+                    "file": "C:\\Users\\www73\\Desktop\\miniIMUAndroid-06c264e79ab171764ca855f2205ec998eaed542f\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 298,
+                        "endColumn": 52,
+                        "endOffset": 346
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 17,
+                    "startColumn": 4,
+                    "startOffset": 825,
+                    "endColumn": 52,
+                    "endOffset": 873
+                },
+                "from": {
+                    "file": "C:\\Users\\www73\\Desktop\\miniIMUAndroid-06c264e79ab171764ca855f2205ec998eaed542f\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 245,
+                        "endColumn": 52,
+                        "endOffset": 293
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 18,
+                    "startColumn": 4,
+                    "startOffset": 878,
+                    "endColumn": 50,
+                    "endOffset": 924
+                },
+                "from": {
+                    "file": "C:\\Users\\www73\\Desktop\\miniIMUAndroid-06c264e79ab171764ca855f2205ec998eaed542f\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 10,
+                        "startColumn": 4,
+                        "startOffset": 351,
+                        "endColumn": 50,
+                        "endOffset": 397
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 19,
+                    "startColumn": 4,
+                    "startOffset": 929,
+                    "endColumn": 56,
+                    "endOffset": 981
+                },
+                "from": {
+                    "file": "C:\\Users\\www73\\Desktop\\miniIMUAndroid-06c264e79ab171764ca855f2205ec998eaed542f\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 18,
+                        "startColumn": 4,
+                        "startOffset": 684,
+                        "endColumn": 56,
+                        "endOffset": 736
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 20,
+                    "startColumn": 4,
+                    "startOffset": 986,
+                    "endColumn": 55,
+                    "endOffset": 1037
+                },
+                "from": {
+                    "file": "C:\\Users\\www73\\Desktop\\miniIMUAndroid-06c264e79ab171764ca855f2205ec998eaed542f\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 17,
+                        "startColumn": 4,
+                        "startOffset": 628,
+                        "endColumn": 55,
+                        "endOffset": 679
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 21,
+                    "startColumn": 4,
+                    "startOffset": 1042,
+                    "endLine": 27,
+                    "endColumn": 12,
+                    "endOffset": 1328
+                },
+                "from": {
+                    "file": "C:\\Users\\www73\\Desktop\\miniIMUAndroid-06c264e79ab171764ca855f2205ec998eaed542f\\app\\src\\main\\res\\values\\styles.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 186,
+                        "endLine": 12,
+                        "endColumn": 12,
+                        "endOffset": 472
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 28,
+                    "startColumn": 4,
+                    "startOffset": 1333,
+                    "endLine": 30,
+                    "endColumn": 12,
+                    "endOffset": 1488
+                },
+                "from": {
+                    "file": "C:\\Users\\www73\\Desktop\\miniIMUAndroid-06c264e79ab171764ca855f2205ec998eaed542f\\app\\src\\main\\res\\values\\styles.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 4,
+                        "startOffset": 510,
+                        "endLine": 17,
+                        "endColumn": 12,
+                        "endOffset": 665
+                    }
+                }
+            }
+        ]
+    }
+]
