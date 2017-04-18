@@ -17,7 +17,7 @@ import android.os.Message;
 public class DrawLine implements Renderer
 {
 	
-	float x=-0.5f,y=-0.5f,z=-0.5f;
+	float x=.1f,y=.1f,z=.1f;
 	private float r=4253;
 	Handler handler,handler2;
 	private Timer timer = new Timer();
@@ -199,13 +199,6 @@ public class DrawLine implements Renderer
 				y=(float) (Math.random()*(-2)+1);
 				z=(float) (Math.random()*(-2)+1);*/
 
-//			   x=-0.1f;
-//			   y=0;
-//			   z=(float)-0.5;
-
-
-
-
 				//设定一下要显示的XYZ位数,不管正负都显示小数点后两位
 				if(x>0)
 					xyz[0]=String.valueOf(x).substring(0, 4);
@@ -219,6 +212,9 @@ public class DrawLine implements Renderer
 					xyz[2]=String.valueOf(z).substring(0, 4);
 				else
 					xyz[2]=String.valueOf(z).substring(0, 5);
+
+
+
 				Message msg = new Message();
 				msg.what=200;//这是发送给当前类中用来更新立方体的
 				handler.sendEmptyMessage(msg.what);
@@ -233,7 +229,7 @@ public class DrawLine implements Renderer
 
 		   }
 	   };
-	   timer.schedule(task, 0, 1000);
+	   timer.schedule(task, 0, 300);
 	}
 
 	@Override
@@ -250,7 +246,7 @@ public class DrawLine implements Renderer
 		gl.glEnable(GL10.GL_DEPTH_TEST);
 		// 设置深度测试的类型
 		gl.glDepthFunc(GL10.GL_LEQUAL);
-		
+
 	}
 
 	@Override
@@ -271,7 +267,7 @@ public class DrawLine implements Renderer
 	// 绘制图形的方法
 	@Override
 	public void onDrawFrame(GL10 gl)
-	{	
+	{
 		// 清除屏幕缓存和深度缓存
 		gl.glClear(GL10.GL_COLOR_BUFFER_BIT | GL10.GL_DEPTH_BUFFER_BIT);
 		// 启用顶点座标数据
@@ -280,7 +276,7 @@ public class DrawLine implements Renderer
 		//gl.glEnableClientState(GL10.GL_COLOR_ARRAY);
 		// 设置当前矩阵模式为模型视图。
 		gl.glMatrixMode(GL10.GL_MODELVIEW);
-		
+
 		// --------------------绘制正方体---------------------
 		// 重置当前的模型视图矩阵
 		gl.glLoadIdentity();
@@ -373,7 +369,6 @@ public class DrawLine implements Renderer
 		x=jiasudu[0];
 		y=jiasudu[1];
 		z=jiasudu[2];
-
 	}
 }
 

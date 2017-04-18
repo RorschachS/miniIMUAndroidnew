@@ -780,7 +780,8 @@ public class DataMonitor extends FragmentActivity implements OnClickListener {
 	};
 
 	private TimerTask myTask;
-	private Timer timer=new Timer();
+	private Timer myTimer=new Timer();
+	public float[] jiasudu = new float[4];
 
 	public void onPlot() {
 /*		float[] jiasudu=new float[4];
@@ -814,16 +815,16 @@ public class DataMonitor extends FragmentActivity implements OnClickListener {
 		myTask = new TimerTask() {
 
 			public void run() {
-				float[] jiasudu = new float[4];
+
 				jiasudu[0] = mData[0];
-				jiasudu[1] = mData[1];
-				jiasudu[2] = mData[2];
+				jiasudu[1]= mData[1];
+				jiasudu[2]= mData[2];
 				jiasudu[3] = mData[16];
 				myRender.getXYZ(jiasudu);
 
 			}
 		};
-		timer.schedule(myTask, 0, 1000);
+		myTimer.schedule(myTask, 0, 300);
 
 
 			//使用线程传递数据
