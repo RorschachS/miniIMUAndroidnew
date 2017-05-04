@@ -54,6 +54,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import quaternions.Quaternion;
+
 
 public class DataMonitor extends FragmentActivity implements OnClickListener {
 
@@ -686,10 +688,10 @@ public class DataMonitor extends FragmentActivity implements OnClickListener {
 				((TextView)findViewById(R.id.tvDataName3)).setText("HDOP：");((TextView)findViewById(R.id.tvNum3)).setText("0");
 				((TextView)findViewById(R.id.tvDataName4)).setText("VDOP：");((TextView)findViewById(R.id.tvNum4)).setText("0");
 				break;
-			case R.id.buttonB:
+/*			case R.id.buttonB:
 				iCurrentGroup=11;
 				onPlot();
-				break;
+				break;*/
 		}
         ((Button) findViewById(R.id.button0)).setBackgroundResource(R.drawable.ic_preference_single_normal);
 		((Button) findViewById(R.id.button1)).setBackgroundResource(R.drawable.ic_preference_single_normal);
@@ -782,20 +784,10 @@ public class DataMonitor extends FragmentActivity implements OnClickListener {
 	private TimerTask myTask;
 	private Timer myTimer=new Timer();
 	public float[] jiasudu = new float[4];
+	public float[] xyzDegree=new float[4];
 
 	public void onPlot() {
-/*		float[] jiasudu=new float[4];
-		jiasudu[0]=mData[0];
-		jiasudu[1]=mData[1];
-		jiasudu[2]=mData[2];
-		jiasudu[3]=mData[16];*/
 
-
-
-		/*Intent intent = new Intent(this, PlotActivity.class);
-		intent.putExtra(EXTRA_MESSAGE,jiasudu);
-		startActivity(intent);*/
-		//setContentView(R.layout.plot_activity);
 
 		// 创建一个GLSurfaceView，用于显示OpenGL绘制的图形
 		GLSurfaceView glView = new GLSurfaceView(this);
@@ -819,8 +811,12 @@ public class DataMonitor extends FragmentActivity implements OnClickListener {
 				jiasudu[0] = mData[0];
 				jiasudu[1]= mData[1];
 				jiasudu[2]= mData[2];
-				jiasudu[3] = mData[16];
-				myRender.getXYZ(jiasudu);
+
+				xyzDegree[0]=mData[6];
+				xyzDegree[1]=mData[7];
+				xyzDegree[2]=mData[8];
+
+				myRender.getXYZ(jiasudu,xyzDegree);
 
 			}
 		};
@@ -843,8 +839,6 @@ public class DataMonitor extends FragmentActivity implements OnClickListener {
 		Thread thread = new MyThread();
 		thread.start();*/
 
-
-        //myRender.getXYZ(jiasudu);
         // 为GLSurfaceView设置绘制器
         glView.setRenderer(myRender);
         LinearLayout zjkLayout = (LinearLayout) findViewById(R.id.z);//R.id.z绘制区

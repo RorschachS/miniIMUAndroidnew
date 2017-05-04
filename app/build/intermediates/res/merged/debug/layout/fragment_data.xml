@@ -57,30 +57,32 @@
             android:textColor="#000"
             android:layout_alignParentRight="true" />
     </RelativeLayout>
+
     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="60dp"
-        android:gravity="center_vertical"
+        android:background="@drawable/preference_item"
         android:clickable="true"
-        android:background="@drawable/preference_item" >
+        android:gravity="center_vertical">
+
         <TextView
             android:id="@+id/tvDataName2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="8dp"
             android:text="Y轴："
-            android:textSize="17sp"
-            android:textColor="#000"/>
+            android:textColor="#000"
+            android:textSize="17sp" />
 
         <TextView
             android:id="@+id/tvNum2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
             android:padding="8dp"
             android:text="0"
-            android:textSize="17sp"
             android:textColor="#000"
-            android:layout_alignParentRight="true" />
+            android:textSize="17sp" />
     </RelativeLayout>
 
     <RelativeLayout

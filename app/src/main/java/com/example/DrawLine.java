@@ -13,12 +13,17 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 
+import quaternions.Quaternion;
+
 
 public class DrawLine implements Renderer
 {
 	
 	float x=.1f,y=.1f,z=.1f;
-	private float r=4253;
+	//private float r=4253;
+
+	private float xDegree=0.1f,yDegree=0.1f,zDegree=0.1f;
+
 	Handler handler,handler2;
 	private Timer timer = new Timer();
 	private TimerTask task;
@@ -64,8 +69,8 @@ public class DrawLine implements Renderer
 
 			0f ,0f ,-1.2f,//8 Z轴起点
 			0f ,0f ,1.2f,//9 Z轴终点
-			0f ,0.1f ,1.0f,//10 Z轴箭头1
-			0f ,-0.1f ,1.0f,//11 Z轴箭头2
+			0f ,-0.1f ,1.0f,//10 Z轴箭头1
+			0f ,0.1f ,1.0f,//11 Z轴箭头2
 
 			1.3f,0f,0f,//12 绘制字X
 			1.35f,0.1f,0f,//13
@@ -229,7 +234,7 @@ public class DrawLine implements Renderer
 
 		   }
 	   };
-	   timer.schedule(task, 0, 300);
+	   timer.schedule(task, 0, 1000);
 	}
 
 	@Override
@@ -284,12 +289,14 @@ public class DrawLine implements Renderer
 
 		gl.glTranslatef(0.0f, -0.0f, -3.0f);//移动中心
 		// 沿着Y轴旋转
-		gl.glRotatef(45f, 0f, 0.1f, 0.0f);
+		gl.glRotatef(yDegree,0f,0.1f,.0f);
 		//	r++;
 		// 沿着X轴旋转
-		gl.glRotatef(10f, 0.1f, 0f, 0f);
+		gl.glRotatef(xDegree,0.1f,0f,0f);
+		gl.glRotatef(zDegree,0f,0f,0.1f);
 		// 沿着Z轴旋转
-		//gl.glRotatef(*f,0f,0f,0.1f);
+
+
 
 
 		gl.glLineWidth(2.0f);
@@ -365,10 +372,13 @@ public class DrawLine implements Renderer
 		mBuffer.position(0);
 		return mBuffer;
 	}
-	public void getXYZ(float[] jiasudu){
+	public void getXYZ(float[] jiasudu,float[] xyzDegree){
 		x=jiasudu[0];
 		y=jiasudu[1];
 		z=jiasudu[2];
+		xDegree=xyzDegree[0];
+		yDegree=xyzDegree[1];
+		zDegree=xyzDegree[2];
 	}
 }
 

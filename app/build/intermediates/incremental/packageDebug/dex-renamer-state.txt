@@ -1,4 +1,4 @@
-#Tue Apr 18 16:52:06 SGT 2017
+#Tue May 02 16:00:36 SGT 2017
 base.0=C\:\\Users\\www73\\Desktop\\miniIMUAndroid-06c264e79ab171764ca855f2205ec998eaed542f\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main
 renamed.0=classes.dex
 file.0=C\:\\Users\\www73\\Desktop\\miniIMUAndroid-06c264e79ab171764ca855f2205ec998eaed542f\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main\\classes.dex
