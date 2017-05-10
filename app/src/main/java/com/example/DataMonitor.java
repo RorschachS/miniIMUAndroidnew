@@ -10,6 +10,7 @@ import java.util.TimerTask;
 import javax.security.auth.PrivateCredentialPermission;
 
 import com.example.R;
+import com.model.GLRenderer;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -54,7 +55,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import quaternions.Quaternion;
+
 
 
 public class DataMonitor extends FragmentActivity implements OnClickListener {
@@ -84,6 +85,8 @@ public class DataMonitor extends FragmentActivity implements OnClickListener {
     TextView X,Y,Z ;
 
     float [] mData;
+	public GLRenderer myRender;
+	public GLSurfaceView glView;
 
 	private final Handler mHandler = new Handler() {
 		// 匿名内部类写法，实现接口Handler的一些方法
@@ -790,7 +793,7 @@ public class DataMonitor extends FragmentActivity implements OnClickListener {
 
 
 		// 创建一个GLSurfaceView，用于显示OpenGL绘制的图形
-		GLSurfaceView glView = new GLSurfaceView(this);
+		 glView = new GLSurfaceView(this);
 
 		/*****************************************************************
 		 * 注意:下面调用DrawLine的构造函数的时候一定要保证次语句在参数drawlineHandler的实体下面
@@ -801,7 +804,11 @@ public class DataMonitor extends FragmentActivity implements OnClickListener {
 		 */
 		// 创建GLSurfaceView的内容绘制器
 		//
-		final DrawLine myRender = new DrawLine(drawlineHandler);
+		//final DrawLine myRender = new DrawLine(drawlineHandler);
+		 myRender=new GLRenderer(this);
+
+
+
 
      	//使用Timer传递数据
 		myTask = new TimerTask() {
@@ -816,8 +823,8 @@ public class DataMonitor extends FragmentActivity implements OnClickListener {
 				xyzDegree[1]=mData[7];
 				xyzDegree[2]=mData[8];
 
-				myRender.getXYZ(jiasudu,xyzDegree);
 
+				myRender.rotate(xyzDegree);
 			}
 		};
 		myTimer.schedule(myTask, 0, 300);
@@ -848,5 +855,8 @@ public class DataMonitor extends FragmentActivity implements OnClickListener {
         Y = (TextView) findViewById(R.id.Y);
         Z = (TextView) findViewById(R.id.Z);
 	}
+
+
+
 
 }
